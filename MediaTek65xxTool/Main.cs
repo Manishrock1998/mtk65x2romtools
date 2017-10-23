@@ -391,10 +391,8 @@ namespace MediaTek65xxTool
         {
             MessageBox.Show("This feature isn't available just yet. :)");
             return;
-            File.Copy(dirPath + "/temp/BaseROM/system/etc/firmware", dirPath + "/temp/PortROM/system/etc/firmware", true);
-            File.Copy(dirPath + "/temp/BaseROM/system/etc/wifi", dirPath + "/temp/PortROM/system/etc/wifi", true);
-            File.Copy(dirPath + "/temp/BaseROM/system/etc/bluetooth", dirPath + "/temp/PortROM/system/etc/bluetooth", true);
         }
+
         void GeneralPort()
         {
             label2.Text = "Status: Replacing drivers";
@@ -577,21 +575,33 @@ namespace MediaTek65xxTool
 
         void Cleanup(bool exit)
         {
-            DirectoryInfo direcx = new DirectoryInfo(dirPath + "/temp/");
-
-            foreach (FileInfo file in direcx.GetFiles())
+            if (Directory.Exists(dirPath + "/temp/"))
             {
-                file.Delete();
-            }
-            foreach (DirectoryInfo dir in direcx.GetDirectories())
-            {
-                dir.Delete(true);
-            }
+                DirectoryInfo direcx = new DirectoryInfo(dirPath + "/temp/");
 
-            Directory.Delete(dirPath + "/temp/");
+                foreach (FileInfo file in direcx.GetFiles())
+                {
+                    file.Delete();
+                }
+                foreach (DirectoryInfo dir in direcx.GetDirectories())
+                {
+                    dir.Delete(true);
+                }
 
+                Directory.Delete(dirPath + "/temp/");
+            }
             if (exit)
                 Application.Exit();
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tool made by Swoopae/Octav Adrian. Version 0.2.1.0 (Open Beta). Last update on 23/10/17. ");
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            Cleanup(true);
         }
     }
 }

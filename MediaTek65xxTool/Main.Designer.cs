@@ -41,12 +41,16 @@
             this.mtButton2 = new System.Windows.Forms.RadioButton();
             this.mtButton3 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.mtButton4 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.mtButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // baseRomFile
@@ -62,9 +66,9 @@
             // portZipButton
             // 
             this.portZipButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.portZipButton.Location = new System.Drawing.Point(158, 12);
+            this.portZipButton.Location = new System.Drawing.Point(135, 25);
             this.portZipButton.Name = "portZipButton";
-            this.portZipButton.Size = new System.Drawing.Size(241, 25);
+            this.portZipButton.Size = new System.Drawing.Size(258, 40);
             this.portZipButton.TabIndex = 0;
             this.portZipButton.Text = "New ROM Zip";
             this.portZipButton.UseVisualStyleBackColor = true;
@@ -73,9 +77,9 @@
             // stockZipButton
             // 
             this.stockZipButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.stockZipButton.Location = new System.Drawing.Point(158, 35);
+            this.stockZipButton.Location = new System.Drawing.Point(135, 73);
             this.stockZipButton.Name = "stockZipButton";
-            this.stockZipButton.Size = new System.Drawing.Size(241, 26);
+            this.stockZipButton.Size = new System.Drawing.Size(258, 40);
             this.stockZipButton.TabIndex = 1;
             this.stockZipButton.Text = "Stock/Ported ROM Zip";
             this.stockZipButton.UseVisualStyleBackColor = true;
@@ -85,7 +89,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Enabled = false;
-            this.radioButton1.Location = new System.Drawing.Point(12, 12);
+            this.radioButton1.Location = new System.Drawing.Point(10, 33);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(87, 17);
             this.radioButton1.TabIndex = 2;
@@ -96,7 +100,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(12, 35);
+            this.radioButton2.Location = new System.Drawing.Point(10, 60);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(86, 17);
             this.radioButton2.TabIndex = 3;
@@ -107,7 +111,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(12, 58);
+            this.radioButton3.Location = new System.Drawing.Point(10, 87);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(95, 17);
             this.radioButton3.TabIndex = 4;
@@ -120,7 +124,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(12, 234);
+            this.button1.Location = new System.Drawing.Point(12, 279);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(387, 23);
             this.button1.TabIndex = 5;
@@ -169,28 +173,20 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.mtButton3);
             this.groupBox1.Controls.Add(this.mtButton1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 81);
+            this.groupBox1.Location = new System.Drawing.Point(12, 120);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 147);
+            this.groupBox1.Size = new System.Drawing.Size(387, 153);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chipset";
             // 
-            // label1
+            // textBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(282, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 26);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Made by Swoopae \r\n      (Octav Adrian)";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 284);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(387, 35);
-            this.progressBar1.TabIndex = 11;
+            this.textBox1.Location = new System.Drawing.Point(7, 116);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(374, 20);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // mtButton4
             // 
@@ -203,28 +199,62 @@
             this.mtButton4.UseVisualStyleBackColor = true;
             this.mtButton4.CheckedChanged += new System.EventHandler(this.mtButton4_CheckedChanged);
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(374, 20);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(282, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 26);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Made by Swoopae \r\n      (Octav Adrian)";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 321);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(387, 35);
+            this.progressBar1.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 264);
+            this.label2.Location = new System.Drawing.Point(12, 305);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Status: Idle";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(409, 25);
+            this.toolStrip1.TabIndex = 13;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(40, 22);
+            this.toolStripLabel1.Text = "About";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(25, 22);
+            this.toolStripLabel2.Text = "Exit";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 331);
+            this.ClientSize = new System.Drawing.Size(409, 368);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox1);
@@ -234,13 +264,16 @@
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.stockZipButton);
             this.Controls.Add(this.portZipButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(425, 407);
+            this.MinimumSize = new System.Drawing.Size(425, 407);
             this.Name = "Main";
             this.Text = "MediaTek 65xx ROM Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,6 +298,9 @@
         private System.Windows.Forms.RadioButton mtButton4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }
 

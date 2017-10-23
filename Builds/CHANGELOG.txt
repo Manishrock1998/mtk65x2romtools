@@ -1,7 +1,13 @@
+  0.2.1.0
+-Made some UI improvements.
+-Improved some code here and there.
+-Removed unused code.
+-Fixed small bugs.
+
   0.2.0.0
--Added custom chipset preset feature
--Added example preset
--Fixed bugs
+-Added custom chipset preset feature.
+-Added example preset.
+-Fixed bugs.
 
   0.1.0.0
 -Initial release.
