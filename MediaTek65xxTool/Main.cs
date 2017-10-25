@@ -183,7 +183,7 @@ namespace MediaTek65xxTool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(dirPath + "/" + customChip + ".ini"))
+            if (!File.Exists(dirPath + "/" + customChip + ".ini") && chipset == "custom")
             {
                 MessageBox.Show("Please select a valid custom chipset preset. (Make sure what you typed is equal to what the .ini preset is named, for example you must type PRESET for the file PRESET.ini");
                 return;
@@ -596,7 +596,7 @@ namespace MediaTek65xxTool
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tool made by Swoopae/Octav Adrian. Version 0.2.1.0 (Open Beta). Last update on 23/10/17. ");
+            MessageBox.Show("Tool made by Swoopae/Octav Adrian. Version 0.2.1.5 (Open Beta). Last update on 23/10/17. ");
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
