@@ -1,3 +1,6 @@
+  1.0.0.0
+-Cleaned up some code.
+
   0.2.1.5
 -Fixed a huge bug.
 

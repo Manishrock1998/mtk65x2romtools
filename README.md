@@ -1,10 +1,13 @@
 # MediaTek 65x2 ROM Tools
-Version 0.2.1.5
+Version 1.0.0.0
 
 Please read all the notes before downloading.
 Download link: In the /bulids/ directory, select a version (you're probably going to want to go with the newest one) and click on the .exe file. Afterwards, just hit the download button. 
 
 Changelog: 
+
+1.0.0.0
+-First stable release, wow! Cleaned up some useless code, optimized some, and that's about it. 
 
 0.2.1.5
 -Fixed a huge bug. 

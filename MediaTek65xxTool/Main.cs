@@ -69,8 +69,6 @@ namespace MediaTek65xxTool
                 AndroidVer = int.Parse(ini.Read("AndroidVer", "Preferences"));
                 chipset = ini.Read("Chipset", "Preferences");
 
-                // i'm way too lazy to rewrite this as a switch even tho it would look so much prettier
-
                 switch (AndroidVer)
                 {
                     case 1:
@@ -425,18 +423,7 @@ namespace MediaTek65xxTool
             {
                 MessageBox.Show("Unexpected error. Error code: 0x03 (at moving libraries from stock to port rom)");
 
-                DirectoryInfo di = new DirectoryInfo(dirPath + "/temp/");
-
-                foreach (FileInfo file in di.GetFiles())
-                {
-                    file.Delete();
-                }
-                foreach (DirectoryInfo dir in di.GetDirectories())
-                {
-                    dir.Delete(true);
-                }
-
-                Application.Exit();
+                Cleanup(true);
             }
 
             Directory.CreateDirectory(dirPath + "/temp/BaseROM/bootimage");
@@ -480,19 +467,7 @@ namespace MediaTek65xxTool
             catch (Exception)
             {
                 MessageBox.Show("Unexpected error.Error code: 0x04 (Boot image unpacking/repacking error)");
-                
-                DirectoryInfo di = new DirectoryInfo(dirPath + "/temp/");
-
-                foreach (FileInfo file in di.GetFiles())
-                {
-                    file.Delete();
-                }
-                foreach (DirectoryInfo dir in di.GetDirectories())
-                {
-                    dir.Delete(true);
-                }
-
-                Application.Exit();
+                Cleanup(true);
             }
 
             progressBar1.Value = 85;
@@ -596,7 +571,7 @@ namespace MediaTek65xxTool
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tool made by Swoopae/Octav Adrian. Version 0.2.1.5 (Open Beta). Last update on 23/10/17. ");
+            MessageBox.Show("Tool made by Swoopae/Octav Adrian. Version 1.0 (Stable). Last update on 30/10/17. ");
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
